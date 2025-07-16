@@ -1,0 +1,41 @@
+# Python cache
+__pycache__/
+
+# 虛擬環境
+venv/
+
+# 環境變數
+.env
+
+# SQLite 資料庫（若不希望上傳 DB 檔）
+database.db
+
+
+.flaskenv(自行建立)
+
+內文:
+
+FLASK_APP=app.py
+FLASK_ENV=development
+
+.env(自行建立)
+
+內文:
+
+GOOGLE_API_KEY=AIzaSyCwuB-ZwXwlotpn9vfVrrBu161LxsKz5yI
+
+venv架設
+
+1.# 建立虛擬環境
+python -m venv venv
+
+2.# 啟動虛擬環境
+
+# Windows:
+venv\Scripts\activate
+
+# macOS/Linux:
+source venv/bin/activate
+
+3.# 安裝新的 Google AI 套件
+pip install google-generativeai

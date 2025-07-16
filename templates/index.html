@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 智慧冰箱食譜</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI 智慧冰箱食譜</h1>
+            <p>上傳您冰箱的照片，讓 AI 為您創造專屬料理！</p>
+        </header>
+
+        <main>
+            <section id="upload-section" class="card active">
+                <h2>步驟 1: 開啟您的智慧冰箱</h2>
+                <div id="image-uploader">
+                    <div class="upload-slot">
+                        <input type="file" id="file1" class="file-input" accept="image/*" hidden>
+                        <label for="file1" class="upload-label">+</label>
+                        <img id="preview1" class="image-preview">
+                    </div>
+                    <div class="upload-slot">
+                        <input type="file" id="file2" class="file-input" accept="image/*" hidden>
+                        <label for="file2" class="upload-label">+</label>
+                        <img id="preview2" class="image-preview">
+                    </div>
+                    <div class="upload-slot">
+                        <input type="file" id="file3" class="file-input" accept="image/*" hidden>
+                        <label for="file3" class="upload-label">+</label>
+                        <img id="preview3" class="image-preview">
+                    </div>
+                </div>
+                <button id="identify-btn" class="btn btn-primary">辨識食材</button>
+            </section>
+
+            <section id="confirm-section" class="card">
+                <h2>步驟 2: 確認主要食材</h2>
+                <div id="ingredient-tags"></div>
+                <p class="sub-text">AI 已為您挑選出最適合的食材組合</p>
+                <button id="generate-btn" class="btn btn-primary">生成專屬食譜</button>
+            </section>
+            
+            <section id="recipe-section" class="card">
+                </section>
+
+            <div id="loader" class="loader-overlay">
+                <div class="loader"></div>
+                <p id="loader-text">AI 主廚正在為您分析...</p>
+            </div>
+        </main>
+        <footer>
+            <p>Powered by Gemini & Flask</p>
+        </footer>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
